@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+}
+
+.main {
+  height: 525px;
+  background: rgba(0, 0, 0, 0.587);
+  width: 1350px;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(255, 255, 255);
+  text-align-last: left;
+  font-size: 16px;
+  position: absolute;
+  right: 120px;
+  top: 140px;
+}
+
+.calc {
+  height: 450px;
+  width: 510px;
+  opacity: 1;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  right: 180px;
+  top: 190px;
+  text-align-last: left;
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.App-header {
+  background-image: url(./Currencies-1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.submit {
+  width: 340px;
+  height: 50px;
+  font-size: 26px;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: rgb(255, 242, 0);
+}
+
+.submit:hover {
+  background-color: rgb(255, 0, 0);
+}
