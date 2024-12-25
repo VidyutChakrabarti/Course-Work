@@ -1,0 +1,17 @@
+.button {
+    background-color: #c1f37b;
+    border: none;
+    color: rgb(0, 100, 100);
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 2px;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 0.6
+}

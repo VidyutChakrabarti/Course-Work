@@ -1,0 +1,73 @@
+.App-header {
+  background-image: url(./back.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-height: 110vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.logic {
+  height: 530px;
+  width: 450px;
+  background-color: rgb(139, 255, 170);
+  border-radius: 1ch;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+  left: 50px;
+  top: 260px;
+}
+
+.logic1 {
+  height: 530px;
+  width: 450px;
+  background-color: rgb(255, 159, 159);
+  border-radius: 1ch;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+  left: 550px;
+  top: 260px;
+}
+
+.logic2 {
+  height: 530px;
+  width: 450px;
+  background-color: rgb(200, 147, 253);
+  border-radius: 1ch;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+  left: 1050px;
+  top: 260px;
+}
+
+.logic3 {
+  height: 160px;
+  width: 600px;
+  background-color: rgb(130, 225, 254);
+  border-radius: 1ch;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+  left: 500px;
+  top: 50px;
+}
+
+.table,
+th,
+td {
+  padding: 6px;
+  border: 1px solid;
+}
