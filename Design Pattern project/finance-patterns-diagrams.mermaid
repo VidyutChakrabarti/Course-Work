@@ -1,0 +1,94 @@
+classDiagram
+    %% 1. Observer Pattern
+    class FinancialObserver {
+        <<interface>>
+        +update(category: String, amount: double, description: String) void
+    }
+    
+    class Account {
+        -accountId: String
+        -accountName: String
+        -balance: double
+        +Account(accountId: String, accountName: String, initialBalance: double)
+        +update(category: String, amount: double, description: String) void
+    }
+    
+    class FinancialActivityMonitor {
+        -observers: List~FinancialObserver~
+        -transactions: Map~String, List~Transaction~~
+        +attach(observer: FinancialObserver) void
+        +recordTransaction(category: String, amount: double, description: String) void
+        -notifyObservers(category: String, amount: double, description: String) void
+    }
+    
+    class Transaction {
+        -category: String
+        -amount: double
+        -description: String
+        -timestamp: LocalDateTime
+        +Transaction(category: String, amount: double, description: String)
+    }
+    
+    FinancialObserver <|.. Account
+    FinancialActivityMonitor o--> FinancialObserver
+    FinancialActivityMonitor o--> Transaction
+
+    %% 2. Singleton Pattern
+    class FinancialDataManager {
+        -instance: FinancialDataManager
+        -financialData: Map~String, Object~
+        -FinancialDataManager()
+        +getInstance(): FinancialDataManager
+        +updateData(key: String, value: Object) void
+        +getData(key: String) Object
+        +recordIncome(amount: double, source: String) void
+        +recordExpense(amount: double, category: String) void
+    }
+    
+    %% 3. Strategy Pattern
+    class InvestmentStrategy {
+        <<interface>>
+        +executeStrategy(amount: double) void
+        +getDescription() String
+    }
+    
+    class ConservativeStrategy {
+        +executeStrategy(amount: double) void
+        +getDescription() String
+    }
+    
+    class AggressiveStrategy {
+        +executeStrategy(amount: double) void
+        +getDescription() String
+    }
+    
+    class InvestmentManager {
+        -strategy: InvestmentStrategy
+        +setStrategy(strategy: InvestmentStrategy) void
+        +invest(amount: double) void
+    }
+    
+    InvestmentStrategy <|.. ConservativeStrategy
+    InvestmentStrategy <|.. AggressiveStrategy
+    InvestmentManager o--> InvestmentStrategy
+    
+    %% 4. Template Method Pattern
+    class BudgetTemplate {
+        <<abstract>>
+        +createBudget(income: double) final void
+        #allocateNecessities(income: double)* void
+        #allocateDiscretionary(income: double)* void
+        #allocateSavings(income: double)* void
+        #displayBudgetSummary(income: double) void
+    }
+    
+    class CustomBudget {
+        -allocations: Map~String, Double~
+        #allocateNecessities(income: double) void
+        #allocateDiscretionary(income: double) void
+        #allocateSavings(income: double) void
+        #displayBudgetSummary(income: double) void
+    }
+    
+    BudgetTemplate <|-- CustomBudget
+
